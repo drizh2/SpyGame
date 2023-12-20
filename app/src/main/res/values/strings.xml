@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">SpyGame</string>
+    <string name="name">ШПИГУН</string>
     <string name="countOfPlayers">Кількість гравців</string>
     <string name="countOfSpies">Кількість шпигунів</string>
     <string name="startGame">Розпочати гру</string>
+    <string name="back_card">Гравець 1</string>
 </resources>

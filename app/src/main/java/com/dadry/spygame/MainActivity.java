@@ -1,5 +1,6 @@
 package com.dadry.spygame;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         countOfPlayers = findViewById(R.id.countOfPlayers);
         countOfSpies = findViewById(R.id.countOfSpies);
-        startButton = findViewById(R.id.startButton);
+        startButton = findViewById(R.id.startGameButton);
 
         countOfSpies.setMinValue(1);
         countOfSpies.setMaxValue(4);
@@ -35,10 +36,7 @@ public class MainActivity extends AppCompatActivity {
         finalCountOfPlayers = countOfPlayers.getValue();
         finalCountOfSpies = countOfSpies.getValue();
 
-        showMessage(finalCountOfPlayers + ", " + finalCountOfSpies);
-    }
-
-    private void showMessage(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, PlayersCards.class);
+        startActivity(intent);
     }
 }

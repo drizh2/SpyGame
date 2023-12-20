@@ -14,19 +14,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="136dp"
-            app:layout_constraintHorizontal_bias="0.247"
+            android:layout_marginTop="288dp"
+            app:layout_constraintHorizontal_bias="0.239"
             android:id="@+id/countOfPlayers"/>
-
-    <NumberPicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="136dp"
-            app:layout_constraintHorizontal_bias="0.78"
-            android:id="@+id/countOfSpies"/>
 
     <TextView
             android:layout_width="wrap_content"
@@ -35,11 +25,21 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/countOfPlayers"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="28dp"
             app:layout_constraintVertical_bias="0.808"
             android:text="@string/countOfPlayers"
             android:textColor="@color/black"
             android:fontFamily="@font/spy_font"/>
+
+    <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="288dp"
+            app:layout_constraintHorizontal_bias="0.778"
+            android:id="@+id/countOfSpies"/>
 
     <TextView
             android:text="@string/countOfSpies"
@@ -55,18 +55,33 @@
             app:layout_constraintHorizontal_bias="0.483"
             app:layout_constraintVertical_bias="0.808"/>
 
-    <Button
-            android:layout_width="202dp"
-            android:layout_height="45dp"
-            android:id="@+id/startButton"
+    <TextView
+            android:text="@string/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameLabel"
+            android:fontFamily="@font/spy_font"
+            android:textColor="@color/black"
+            android:textSize="35sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="388dp"
+            android:layout_marginTop="80dp"/>
+
+    <Button
             android:text="@string/startGame"
+            android:layout_width="247dp"
+            android:layout_height="55dp"
+            android:id="@+id/startGameButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.815"
+            android:textColor="@color/black"
             android:fontFamily="@font/spy_font"
             android:backgroundTint="@color/button"
-            android:textColor="@color/black"
+            android:textSize="18sp"
             android:onClick="startButtonClick"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

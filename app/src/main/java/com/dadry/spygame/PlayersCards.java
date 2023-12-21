@@ -1,73 +1,39 @@
 package com.dadry.spygame;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+import com.dadry.spygame.fragment.CardBackFragment;
+import com.dadry.spygame.fragment.CardFrontFragment;
 import com.dadry.spygame.roles.Role;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class PlayersCards extends AppCompatActivity {
 
     private boolean showingBack;
     public static List<Role> roles = new ArrayList<>();
     FrameLayout card;
-    String word = "Слово: ";
-
-    public static class CardFrontFragment extends Fragment {
-
-//        TextView roleLabel, wordLabel;
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.fragment_card_front, container, false);
-        }
-
-//        public CardFrontFragment setRoleLabel(String text) {
-//            roleLabel.setText(text);
-//
-//            return this;
-//        }
-//
-//        public CardFrontFragment setWordLabel(String text) {
-//            wordLabel.setText(text);
-//
-//            return this;
-//        }
-    }
-
-    public static class CardBackFragment extends Fragment {
-
-//        TextView playerLabel;
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.fragment_card_back, container, false);
-        }
-
-//        public CardBackFragment setPlayerLabel(String text) {
-//            playerLabel.setText(text);
-//
-//            return this;
-//        }
-
-    }
+    String word = "Слово";
+    int countOfClicks = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players_cards);
 
+        CardBackFragment cardBackFragment = new CardBackFragment();
+
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.container, new CardBackFragment())
+                    .add(R.id.container, cardBackFragment)
                     .commit();
         }
 
@@ -86,9 +52,50 @@ public class PlayersCards extends AppCompatActivity {
         card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                flipCard();
+                if(countOfClicks == roles.size()) {
+                    moveToTimerActivity();
+                } else {
+                    flipCard();
+                    onResume();
+                }
             }
         });
+    }
+
+    private void moveToTimerActivity() {
+        Intent intent = new Intent(this, Timer.class);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (!showingBack) {
+            TextView playerLabel = findViewById(R.id.cardBack);
+            playerLabel.setText("Гравець " + (countOfClicks + 1));
+        } else {
+            TextView roleLabel = findViewById(R.id.roleTextView);
+            roleLabel.setText("Роль: " + roles.get(countOfClicks).getLocalName());
+
+            TextView wordLabel = findViewById(R.id.wordTextView);
+            String wordForLabel;
+            if (roles.get(countOfClicks).equals(Role.PLAYER)) {
+                wordForLabel = "Слово: " + word;
+            } else {
+                wordForLabel = "Ви не знаєте слова!";
+            }
+
+            wordLabel.setText(wordForLabel);
+            countOfClicks++;
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        TextView playerLabel = findViewById(R.id.cardBack);
+        playerLabel.setText("Гравець 1");
     }
 
     private void flipCard() {

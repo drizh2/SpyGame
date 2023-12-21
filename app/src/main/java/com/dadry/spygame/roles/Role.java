@@ -20,4 +20,8 @@ public enum Role {
     Role(String localName) {
         this.localName = localName;
     }
+
+    public String getLocalName() {
+        return localName;
+    }
 }

@@ -26,7 +26,7 @@
             android:id="@+id/roleTextView"
             android:text="Ви [role]"
             android:textColor="@color/black"
-            android:textSize="28sp"
+            android:textSize="20sp"
             android:fontFamily="@font/spy_font"
             app:layout_constraintTop_toTopOf="@+id/cardBack"
             app:layout_constraintStart_toStartOf="@+id/cardBack"

@@ -5,4 +5,10 @@
     <string name="countOfSpies">Кількість шпигунів</string>
     <string name="startGame">Розпочати гру</string>
     <string name="back_card">Гравець 1</string>
+    <string name="timer_start">10:00</string>
+    <string name="start">Старт</string>
+    <string name="stop">Стоп</string>
+    <string name="spy_button">Хто шпигун?</string>
+    <string name="clear"></string>
+    <string name="play_again">Грати ще</string>
 </resources>

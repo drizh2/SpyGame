@@ -8,6 +8,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     public static int finalCountOfPlayers;
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        restart();
 
         countOfPlayers = findViewById(R.id.countOfPlayers);
         countOfSpies = findViewById(R.id.countOfSpies);
@@ -38,5 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, PlayersCards.class);
         startActivity(intent);
+    }
+
+    private void restart() {
+        MainActivity.finalCountOfPlayers = 0;
+        MainActivity.finalCountOfSpies = 0;
     }
 }

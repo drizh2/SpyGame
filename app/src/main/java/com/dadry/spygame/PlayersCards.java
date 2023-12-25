@@ -28,6 +28,8 @@ public class PlayersCards extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players_cards);
 
+        restart();
+
         CardBackFragment cardBackFragment = new CardBackFragment();
 
         if (savedInstanceState == null) {
@@ -60,6 +62,10 @@ public class PlayersCards extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void restart() {
+        PlayersCards.roles = new ArrayList<>();
     }
 
     private void moveToTimerActivity() {

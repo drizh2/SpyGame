@@ -41,7 +41,7 @@
             android:text="Слово: [word]"
             android:textColor="@color/black"
             android:fontFamily="@font/spy_font"
-            android:textSize="15sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/cardBack"
             app:layout_constraintEnd_toEndOf="@+id/cardBack"
             app:layout_constraintTop_toTopOf="@+id/cardBack"

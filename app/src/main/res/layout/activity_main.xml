@@ -5,8 +5,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/spy_bg"
         tools:context=".MainActivity"
-        android:background="@color/background">
+        >
 
     <NumberPicker
             android:layout_width="wrap_content"
@@ -14,9 +15,11 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="288dp"
-            app:layout_constraintHorizontal_bias="0.239"
-            android:id="@+id/countOfPlayers"/>
+            android:layout_marginTop="272dp"
+            app:layout_constraintHorizontal_bias="0.236"
+            android:id="@+id/countOfPlayers"
+            android:theme="@style/NumberPickerTextColorStyle"
+            android:solidColor="@color/card_bg"/>
 
     <TextView
             android:layout_width="wrap_content"
@@ -26,10 +29,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/countOfPlayers"
             android:layout_marginStart="28dp"
-            app:layout_constraintVertical_bias="0.808"
+            app:layout_constraintVertical_bias="0.691"
             android:text="@string/countOfPlayers"
-            android:textColor="@color/black"
-            android:fontFamily="@font/spy_font"/>
+            android:fontFamily="@font/spy_font"
+            android:textColor="@color/label"/>
 
     <NumberPicker
             android:layout_width="wrap_content"
@@ -37,9 +40,11 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="288dp"
-            app:layout_constraintHorizontal_bias="0.778"
-            android:id="@+id/countOfSpies"/>
+            android:layout_marginTop="272dp"
+            app:layout_constraintHorizontal_bias="0.763"
+            android:id="@+id/countOfSpies"
+            android:theme="@style/NumberPickerTextColorStyle"
+            android:solidColor="@color/card_bg"/>
 
     <TextView
             android:text="@string/countOfSpies"
@@ -47,13 +52,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/countOfSpiesText"
             android:fontFamily="@font/spy_font"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toEndOf="@+id/countOfPlayersText"
+            android:textColor="@color/label"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/countOfSpies"
-            app:layout_constraintHorizontal_bias="0.483"
-            app:layout_constraintVertical_bias="0.808"/>
+            app:layout_constraintHorizontal_bias="0.93"
+            app:layout_constraintVertical_bias="0.691"/>
 
     <TextView
             android:text="@string/name"
@@ -61,7 +66,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/nameLabel"
             android:fontFamily="@font/spy_font"
-            android:textColor="@color/black"
+            android:textColor="@color/label"
             android:textSize="35sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

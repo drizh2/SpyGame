@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Timer"
-        android:background="@color/background">
+        android:background="@drawable/spy_bg">
 
     <Button
             android:layout_width="157dp"
@@ -52,7 +52,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintVertical_bias="0.184"/>
+            app:layout_constraintVertical_bias="0.184"
+            app:tint="@color/label"/>
 
     <TextView
             android:text="@string/timer_start"
@@ -67,9 +68,10 @@
             android:layout_marginEnd="177dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:id="@+id/timerText"
-            android:textColor="@color/black"
+            android:textColor="@color/label"
             android:textSize="50sp"
-            android:fontFamily="@font/spy_font"/>
+            android:fontFamily="@font/spy_font"
+            android:background="@drawable/bg_rounded"/>
 
     <TextView
             android:layout_width="wrap_content"
@@ -80,11 +82,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintVertical_bias="0.681"
-            android:textColor="@color/black"
+            android:textColor="@color/label"
             android:fontFamily="@font/spy_font"
             android:textSize="30sp"
             android:text="@string/clear"
-            app:layout_constraintHorizontal_bias="0.498"/>
+            app:layout_constraintHorizontal_bias="0.498"
+            android:background="@drawable/bg_rounded"/>
 
     <Button
             android:layout_width="243dp"
